@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Stylecss/heritage-style.css">
+    <link rel="stylesheet" href="/Stylecss/style.css">
+    <title>Heritage</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="/photos/logo_And_Icons/logo.png" alt="logo">
+            </a>
+        </div>
+        <div class="Patiala">PATIALA</div>
+        <ul class="nav-links">
+            <li class="mobile-only"><a href="#">Heritage</a></li>
+            <li class="mobile-only"><a href="Culture.html">Culture</a></li>
+            <li class="mobile-only"><a href="modern.html">Modern Life</a></li>
+            <li class="mobile-only"><a href="education.html">Education</a></li>
+            <li class="mobile-only"><a href="health.html">Healthcare</a></li>
+
+            <li class="desktop-only"><a href="index.html#Explore">Explore</a></li>
+            <li class="desktop-only"><a href="index.html#Contact">Contact us</a></li>
+        </ul>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="sidebar">
+
+        <a href="#" class="nav-item"><span class="icon"> <img src="/photos/logo_And_Icons/heritage.png"
+                    alt=""> </span>
+            <span class="label">Heritage</span></a>
+
+
+        <a href="culture.html" class="nav-item"><span class="icon"> <img src="/photos/logo_And_Icons/culture.png"
+                    alt=""> </span>
+            <span class="label">Culture</span></a>
+
+
+        <a href="modern.html" class="nav-item"><span class="icon"> <img src="/photos/logo_And_Icons/modern.png" alt="">
+            </span>
+            <span class="label">Modern</span></a>
+
+
+        <a href="education.html" class="nav-item"><span class="icon"> <img src="/photos/logo_And_Icons/education.png"
+                    alt=""> </span>
+            <span class="label">Education</span></a>
+
+
+        <a href="health.html" class="nav-item"><span class="icon"> <img src="/photos/logo_And_Icons/healthcare.png"
+                    alt=""> </span>
+            <span class="label">Health</span></a>
+    </div>
+    <section class="heritage">
+
+        <h2>Heritage of Patiala</h2>
+
+        <div class="heritage-grid">
+
+            <div class="heritage-card">
+                <img src="/photos/Heritage/qila_mubarak.jpg" alt="">
+                <div class="text">
+                    <h3>Qila Mubarak</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Patiala’s royal fort stands as a symbol
+                        of legacy and strength.</p>
+                </div>
+            </div>
+
+            <div class="heritage-card">
+                <img src="/photos/Heritage/moti_palace.jpg" alt="">
+                <div class="text">
+                    <h3>Moti Bagh Palace</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A blend of royal architecture and
+                        timeless elegance.</p>
+                </div>
+            </div>
+
+            <div class="heritage-card">
+                <img src="/photos/Heritage/sheesh-mehal.jpg" alt="">
+                <div class="text">
+                    <h3>Sheesh Mahal</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mirrors and art reflecting royal
+                        Punjabi heritage.</p>
+                </div>
+            </div>
+
+            <div class="heritage-card">
+                <img src="/photos/Heritage/baradari_garden.avif" alt="">
+                <div class="text">
+                    <h3>Baradari Gardens</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A peaceful royal retreat surrounded by
+                        nature.</p>
+                </div>
+            </div>
+
+            <div class="heritage-card">
+                <img src="/photos/Heritage/ranbas.jpg" alt="">
+                <div class="text">
+                    <h3>Ranbas</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Where history still lives in everyday
+                        life.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("open");
+        });
+        const links = document.querySelectorAll(".nav-links a");
+
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                hamburger.classList.remove("active");
+            });
+        });
+    });
+    let lastScroll = 0;
+    const navbar = document.querySelector("nav");
+
+    window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll) {
+            // scrolling down
+            navbar.style.top = "-100px";
+        } else {
+            // scrolling up
+            navbar.style.top = "0";
+        }
+
+        lastScroll = currentScroll;
+    });
+</script>
+
+</html>

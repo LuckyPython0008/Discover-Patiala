@@ -1,0 +1,130 @@
+/* SECTION */
+.label {
+    color: #0b1e3a;
+    font-weight: bold;
+}
+
+.healthcare {
+    padding: 4rem 2rem;
+    background: bisque;
+    padding-left: 120px;
+}
+
+.healthcare h2 {
+    text-align: center;
+    font-family: "Cinzel", serif;
+    color: #0b1e3a;
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
+    margin-top: 4rem;
+}
+
+/* GRID */
+.healthcare-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* HERO */
+.healthcare-card:first-child {
+    grid-column: span 2;
+}
+
+.healthcare-card:first-child img {
+    height: 400px;
+}
+
+/* CARD DESIGN */
+.healthcare-card {
+    background: #0b1e3a;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.healthcare-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11,30,58,0.8), rgba(11,30,58,0.15)); /* slightly lighter */
+    z-index: 1;
+}
+
+.healthcare-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    border: 1px solid rgba(194,167,92,0.2);
+    pointer-events: none;
+}
+
+.healthcare-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+/* TEXT */
+.healthcare-card .text {
+    position: absolute;
+    bottom: 0;
+    padding: 1.5rem;
+    z-index: 2;
+    color: white;
+}
+
+.healthcare-card h3 {
+    color: #C2A75C;
+    font-family: "Cinzel", serif;
+    margin-bottom: 0.5rem;
+}
+
+.healthcare-card p {
+    font-family: "Roboto Slab", serif;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+}
+
+/* HOVER */
+.healthcare-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.healthcare-card:hover img {
+    transform: scale(1.1);
+}
+
+.healthcare-card:hover::before {
+    background: linear-gradient(to top, rgba(11,30,58,0.9), rgba(11,30,58,0.05));
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .healthcare {
+        padding-left: 2rem;
+    }
+    .healthcare-grid{
+        padding-left: 4rem;
+    }
+}
+
+@media (max-width: 688px) {
+    .healthcare-grid {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
+
+    .healthcare-card {
+        grid-column: span 1 !important;
+    }
+
+    .healthcare-card img {
+        height: 250px;
+    }
+}
